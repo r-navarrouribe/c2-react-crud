@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes, { element } from "prop-types";
 import { useState } from "react";
 export const Elemento = (props) => {
   const { elemento, listado, setListado } = props;
@@ -8,8 +8,10 @@ export const Elemento = (props) => {
   const toggleEditando = () => {
     setEditando(!editando);
   };
-  const editarElemento = () => {
-    setListado([...listado, { artista: artistaNuevo, titulo: tituloNuevo }]);
+  const editarElemento = (e) => {
+    e.preventDefault();
+    elemento.artista = artistaNuevo;
+    elemento.titulo = tituloNuevo;
     toggleEditando();
   };
   const borrarElemento = () => {
@@ -26,8 +28,12 @@ export const Elemento = (props) => {
       <span className="col">
         {elemento.artista} ➜ "{elemento.titulo}"
       </span>
-      <button type="button" className="editar btn btn-dark">
-        Editar
+      <button
+        type="button"
+        className="editar btn btn-dark"
+        onClick={toggleEditando}
+      >
+        {editando ? "Cancelar" : "Editar"}
       </button>
       <form
         className={`form-anyadir bg-dark border ${
@@ -49,11 +55,11 @@ export const Elemento = (props) => {
           onChange={(event) => setTituloNuevo(event.target.value)}
         />
         <button
-          type="button"
-          className="anyadir btn btn-warning"
+          type="submit"
+          className="anyadir btn btn-warning ml-4"
           onClick={editarElemento}
         >
-          Añadir
+          Aplicar
         </button>
       </form>
       <button

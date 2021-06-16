@@ -9,7 +9,8 @@ export const Header = (props) => {
   };
   const [artistaNuevo, setArtistaNuevo] = useState("");
   const [tituloNuevo, setTituloNuevo] = useState("");
-  const anyadirElemento = () => {
+  const anyadirElemento = (e) => {
+    e.preventDefault();
     setListado([...listado, { artista: artistaNuevo, titulo: tituloNuevo }]);
     toggleAnyadiendo();
   };
@@ -28,6 +29,7 @@ export const Header = (props) => {
           className={`form-anyadir bg-dark border ${
             anyadiendo ? "d-block" : "d-none"
           }`}
+          onSubmit={anyadirElemento}
         >
           <label htmlFor="artista">Artista</label>
           <input
@@ -43,11 +45,7 @@ export const Header = (props) => {
             className="mb-3"
             onChange={(event) => setTituloNuevo(event.target.value)}
           />
-          <button
-            type="button"
-            className="anyadir btn btn-warning mr-4"
-            onClick={anyadirElemento}
-          >
+          <button type="submit" className="anyadir btn btn-warning mr-4">
             Añadir
           </button>
           <button
