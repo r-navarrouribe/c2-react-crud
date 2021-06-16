@@ -21,3 +21,17 @@ code {
   min-height: calc(100vh - 80px);
   color: #ddd;
 }
+
+.contenedor-anyadir {
+  position: relative;
+}
+
+.boton-anyadir {
+  width: 100%;
+}
+
+.form-anyadir {
+  position: absolute;
+  z-index: 1;
+  padding: 15px;
+}

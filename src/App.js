@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <div className="contenedor general container">
-        <Header />
+        <Header listado={listado} setListado={setListado} />
         <Listado listado={listado} setListado={setListado} />
       </div>
     </>
