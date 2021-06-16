@@ -45,10 +45,17 @@ export const Header = (props) => {
           />
           <button
             type="button"
-            className="anyadir btn btn-warning"
+            className="anyadir btn btn-warning mr-4"
             onClick={anyadirElemento}
           >
             Añadir
+          </button>
+          <button
+            type="button"
+            className="anyadir btn btn-warning"
+            onClick={toggleAnyadiendo}
+          >
+            Cancelar
           </button>
         </form>
       </div>
