@@ -9,9 +9,9 @@ export const Header = (props) => {
   };
   const [artistaNuevo, setArtistaNuevo] = useState("");
   const [tituloNuevo, setTituloNuevo] = useState("");
-  const anyadirElemento = (e) => {
-    e.preventDefault();
+  const anyadirElemento = () => {
     setListado([...listado, { artista: artistaNuevo, titulo: tituloNuevo }]);
+    toggleAnyadiendo();
   };
   return (
     <header className="cabecera row bg-dark align-items-center">
