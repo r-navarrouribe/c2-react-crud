@@ -40,7 +40,6 @@ code {
   position: absolute;
   z-index: 1;
   padding: 15px;
-  max-width: 220px;
 }
 .form-editar {
   position: absolute;
