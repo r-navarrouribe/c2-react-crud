@@ -35,33 +35,50 @@ export const Elemento = (props) => {
       >
         {editando ? "Cancelar" : "Editar"}
       </button>
-      <form
-        className={`form-anyadir bg-dark border ${
-          editando ? "d-block" : "d-none"
-        }`}
-      >
-        <label htmlFor="artista">Artista</label>
-        <input
-          type="text"
-          id="artista"
-          className="mb-3"
-          onChange={(event) => setArtistaNuevo(event.target.value)}
-        />
-        <label htmlFor="titulo">Título</label>
-        <input
-          type="text"
-          id="titulo"
-          className="mb-3"
-          onChange={(event) => setTituloNuevo(event.target.value)}
-        />
-        <button
-          type="submit"
-          className="anyadir btn btn-warning ml-4"
-          onClick={editarElemento}
+      <div className="padre-form">
+        <form
+          className={`form-editar bg-dark border ${
+            editando ? "d-flex" : "d-none"
+          }`}
         >
-          Aplicar
-        </button>
-      </form>
+          <div>
+            <label htmlFor="artista" className="mr-1">
+              Artista
+            </label>
+            <input
+              type="text"
+              id="artista"
+              onChange={(event) => setArtistaNuevo(event.target.value)}
+            />
+          </div>
+          <div className="editar-titulo">
+            <label htmlFor="titulo" className="mr-1">
+              Título
+            </label>
+            <input
+              type="text"
+              id="titulo"
+              onChange={(event) => setTituloNuevo(event.target.value)}
+            />
+          </div>
+          <div className="d-flex flex-row">
+            <button
+              type="submit"
+              className="aplicar btn btn-warning"
+              onClick={editarElemento}
+            >
+              Aplicar
+            </button>
+            <button
+              type="button"
+              className="aplicar btn btn-warning"
+              onClick={toggleEditando}
+            >
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
       <button
         type="button"
         className="eliminar btn btn-danger"

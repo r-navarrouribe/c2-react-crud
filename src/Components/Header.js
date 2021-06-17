@@ -20,7 +20,7 @@ export const Header = (props) => {
       <div className="contenedor-anyadir col-3">
         <button
           type="button"
-          className="boton-anyadir row btn btn-warning mr-5"
+          className="boton-anyadir row btn btn-warning"
           onClick={toggleAnyadiendo}
         >
           Añadir elemento
