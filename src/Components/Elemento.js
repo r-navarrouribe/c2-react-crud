@@ -3,8 +3,8 @@ import { useState } from "react";
 export const Elemento = (props) => {
   const { elemento, listado, setListado } = props;
   const [editando, setEditando] = useState(false);
-  const [artistaNuevo, setArtistaNuevo] = useState("");
-  const [tituloNuevo, setTituloNuevo] = useState("");
+  const [artistaNuevo, setArtistaNuevo] = useState(elemento.artista);
+  const [tituloNuevo, setTituloNuevo] = useState(elemento.titulo);
   const toggleEditando = () => {
     setEditando(!editando);
   };
@@ -48,6 +48,7 @@ export const Elemento = (props) => {
             <input
               type="text"
               id="artista"
+              value={artistaNuevo}
               onChange={(event) => setArtistaNuevo(event.target.value)}
             />
           </div>
@@ -58,6 +59,7 @@ export const Elemento = (props) => {
             <input
               type="text"
               id="titulo"
+              value={tituloNuevo}
               onChange={(event) => setTituloNuevo(event.target.value)}
             />
           </div>
