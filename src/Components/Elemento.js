@@ -1,4 +1,4 @@
-import PropTypes, { element } from "prop-types";
+import PropTypes from "prop-types";
 import { useState } from "react";
 export const Elemento = (props) => {
   const { elemento, listado, setListado } = props;
